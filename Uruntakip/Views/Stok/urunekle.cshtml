@@ -1,0 +1,92 @@
+﻿
+@{
+    ViewBag.Title = "urunekle";
+    Layout = "~/Views/Shared/main.cshtml";
+}
+
+@using (Html.BeginForm("urunekle", "Stok", FormMethod.Post))
+{
+
+    <div class="" id="frmurunler">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header" style="text-align:center">
+                    <div class="form-group">
+                        <div class="input-group">
+                            <b><input type="text" id="arama" autocomplete="off" class="form-control" /></b>
+                            <span class="input-group-addon" style="width:128px;color:#fc6c05" onclick="urunarama()"><b >Ürün Arama</b></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-body">
+                    <form id="Registration">
+                        <div class="form-group">
+
+                            <div class="input-group">
+                                <span class="input-group-addon" style="width:128px;color:#fc6c05"><b>Ürün Listesi</b></span>
+
+                                <fieldset>
+                                    <select id="urun" name="urun" class="form-control" style="font-weight:bold">
+
+                                        @{
+                                            var liste = (List<Uruntakip.db.tblurunler>)ViewBag.urunler;
+                                            foreach (var item in liste)
+                                            {
+                                                <option value="@item.uruid">@item.urunadi</option>
+                                            }
+
+                                        }
+                                    </select>
+                                </fieldset>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="input-group">
+                                <span class="input-group-addon" style="width:128px;color:#fc6c05"><b>Ürün SeriNO</b></span>
+
+                                <b><input type="text" name="serino" autocomplete="off" class="form-control" /></b>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="input-group">
+                                <span class="input-group-addon" style="width:128px;color:#fc6c05"><b>Ürün Adeti</b></span>
+
+                                <b><input type="text" name="adet" autocomplete="off" id="adet" class="form-control" required=""/></b>
+                            </div>
+                        </div>
+
+                    </form>
+                    <div class="form-group">
+                        <button class="btn btn-success form-control" type="submit">Ekle</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+}
+<script>
+    // adet kısmına harf gırılmesını engellıyoruz
+    onlynumber();
+    fiyatverikontrol();
+   
+</script>
+<script>
+     var mesaj =@ViewBag.mesaj;
+    if (mesaj == 0) {
+        swal("İşlem başarısız", "", "warning");
+        $("#Registration")[0].reset();
+    }
+    else if (mesaj == 1)
+    {
+        swal("işlem başarılı", "", "success");
+        $("#Registration")[0].reset();
+    }
+    else {
+        swal("Bu ürün mevcut !!!", "Lütfen seri numarasını kontrol ediniz!!!", "info");
+        $("#Registration")[0].reset();
+    }
+    /// urun eklerken guncell fıyat gırılecek
+</script>

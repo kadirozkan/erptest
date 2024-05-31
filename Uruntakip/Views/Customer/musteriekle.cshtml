@@ -1,0 +1,75 @@
+﻿
+
+@{
+    ViewBag.Title = "musteriekle";
+    Layout = "~/Views/Shared/main.cshtml";
+}
+
+
+    
+   
+    <div class="" id="frmfirma">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header" style="text-align:center">
+
+                    <div>
+
+                        <span class="" style="color:#fc6c05;font-size:16px"><b> Yeni Müşteri </b></span>
+
+                    </div>
+
+                </div>
+                <div class="modal-body">
+                    <form id="Registration">
+                        <div class="form-group">
+                            <div class="input-group">
+                                <span class="input-group-addon" style="width:128px;color:#fc6c05"><b>Firma Adı</b></span>
+
+                                <b><input type="text" id="firmaadi" autocomplete="off" class="form-control" required="" /></b>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="input-group">
+                                <span class="input-group-addon" style="width:128px;color:#fc6c05"><b>Personel Adı</b></span>
+
+                                <b><input type="text" id="personeladi" autocomplete="off" class="form-control" required="" /></b>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="input-group">
+                                <span class="input-group-addon" style="width:128px;color:#fc6c05"><b>Personel Soyadı</b></span>
+
+                                <b><input type="text" id="personelsoyadi" autocomplete="off" class="form-control" required="" /></b>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="input-group">
+                                <span class="input-group-addon" style="width:128px;color:#fc6c05"><b>Firma Eposta</b></span>
+                                <b><input type="email" id="personeleposta" autocomplete="off" class="form-control" required="" /></b>
+
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="input-group">
+                                <span class="input-group-addon" style="width:128px;color:#fc6c05"><b>Telefon</b></span>
+
+                                <b><input type="text" id="personeltelefon" autocomplete="off" class="form-control" required="" /></b>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="input-group">
+                                <span class="input-group-addon" style="width:128px;color:#fc6c05"><b>Firma Adresi</b></span>
+
+                                <b><input type="text" id="adres" autocomplete="off" class="form-control" required="" /></b>
+                            </div>
+                        </div>
+
+                    </form>
+                    <div class="form-group">
+                        <button class="btn btn-danger form-control" type="submit" onclick="musteriekle()" >Müşteri Ekle</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
