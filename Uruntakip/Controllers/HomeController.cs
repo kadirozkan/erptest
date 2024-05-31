@@ -26,7 +26,7 @@ namespace Uruntakip.Controllers
        
         public ActionResult Login(string username,string password)
         {
-
+            
             string sonuc = "";
             tbllogin bilgiler = db.tbllogins.FirstOrDefault(x => x.eposta == username && x.sifre == password);
             if (bilgiler != null)
