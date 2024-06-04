@@ -461,7 +461,7 @@ namespace Uruntakip.Controllers
                     }
                     else
                     {
-                        tek.iskonto = (int)gelenteklif.iskonto;
+                        tek.iskonto = (decimal)gelenteklif.iskonto;
                     }
                     if (gelenteklif.parabirimi == null)
                     {

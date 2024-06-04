@@ -21,7 +21,7 @@ namespace Uruntakip.Models
         public int teslimatid;
         public string teslimatnotu;
         public int arizano;
-        public int  iskonto;
+        public decimal iskonto;
         public int  paraid;
         public int makinaid;
         public string serino;
